@@ -1,0 +1,51 @@
+
+
+
+-------------------------------------------------------------------------
+
+
+TO START:
+
+roslaunch anki_description start_world.launch
+
+
+
+MOVE THE ROBOT INSIDE THE MAP
+
+------------------------------------------------------------------------
+
+
+
+TO BRING THE MAP INTO RVIZ
+
+rosrun map_server map_server /home/ali/catkin_ws/src/anki_description/maps/map.yaml
+
+
+
+--------------------------------------------------------------------------------
+
+TO FIX THE MAP TRANSFORM:
+
+rosrun tf static_transform_publisher 0 0 0 0 0 0 map odom 100
+
+-------------------------------------------------------------------------------
+
+rviz
+
+then bring map, pose array, robot
+
+
+
+------------------------------------------------------------------------------
+
+MOVE THE ROBOT
+
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/vector/cmd_vel
+
+DECREASE THE SPEEDS
+-----------------------------------------------------------------------------
+
+
+MAIN SCRIPT:
+
+rosrun anki_description particle_filter.py
